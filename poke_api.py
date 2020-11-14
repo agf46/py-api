@@ -1,5 +1,4 @@
 import requests
-import json
 import pprint
 
 API_CALL = "https://pokeapi.co/api/v2/generation/generation-ii"
@@ -11,5 +10,5 @@ results = requests.get(API_CALL)
 results.json()  # Returns a json dict
 
 data = results.json()
-data['pokemon_species']
+data["pokemon_species"]
 pprint.pprint(data)
