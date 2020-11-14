@@ -1,2 +1,2 @@
 # py-api
-Just some random python + flask testing 
+Just some random python API testing 
