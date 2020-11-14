@@ -6,10 +6,10 @@ import pandas as pd
 API_KEY = sys.argv[0]
 
 API_ENDPOINT = "http://maps.googleapis.com/maps/api/geocode"
-KEY = API_KEY # Enter API KEY here
+KEY = API_KEY  # Enter API KEY here
 ADDR_LIST = pd.read_csv("rome_landmarks.csv", sep="|")
 coordinates = []
-
+ 
 for ADDR in ADDR_LIST:
     ADDR = ADDR.replace(" ", "+")
     RES = requests.get(f"{API_ENDPOINT}/json?address={ADDR}&key={KEY}").json()
