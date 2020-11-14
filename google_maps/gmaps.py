@@ -1,5 +1,4 @@
 import requests
-import pprint
 import sys
 import pandas as pd
 
@@ -18,4 +17,3 @@ for ADDR in ADDR_LIST:
     LONG = RES["results"][0]["geometry"]["location"]["lng"]
     coordinates.append((LAT, LONG))
 # Done
-
