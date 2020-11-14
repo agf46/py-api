@@ -1,0 +1,27 @@
+name: pylinter 
+
+on: [push, pull_request]
+
+jobs: 
+  run-linters: 
+    name: Run linter 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout git repo 
+        uses: actions/checkout@v2 
+
+      - name: Setup Python version 
+        uses: actions/setup-python@v1 
+        with: 
+            python-version: 3.8
+      
+      - name: Install python deps 
+        run: pip3 install black flake8
+
+      - name: Run linters 
+        uses: wearerequired/lint-action@v1
+        with: 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          black: true 
+          flake8: true 
