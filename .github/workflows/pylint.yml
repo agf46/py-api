@@ -25,3 +25,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           black: true 
           flake8: true 
+
+      - name: AutoPep8 
+        uses: peter-evans/autopep8@v1
+        with: 
+          args: --recursive --in-place --aggressive --aggressive
