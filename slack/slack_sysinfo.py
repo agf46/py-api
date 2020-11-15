@@ -26,8 +26,8 @@ client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
 
 
 try:
-    filepath="./sysinfo.txt"
-    sp=SlackPrint("SLACK_TOKEN", '#test')  # Enter the slack token here
+    filepath = "./sysinfo.txt"
+    sp = SlackPrint("SLACK_TOKEN", '#test')  # Enter the slack token here
     sp.upload('sysinfo.txt')
 except SlackApiError as e:
     assert e.response["ok"] is False
